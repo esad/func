@@ -140,7 +140,7 @@ function_composition_term(of(_,_)).
 
 % Converts a function composition term into a list of functions to compose
 functions_to_compose(Term, Funcs) :-
-    functor(Term, Op, 2),
+    compound(Term), compound_name_arity(Term, Op, 2),
     Op = (of),
     xfy_list(Op, Term, Funcs).
 
